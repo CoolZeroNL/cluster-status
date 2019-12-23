@@ -1,0 +1,34 @@
+name: main2
+# on:
+#   schedule: 
+#   - cron: '*/5 * * * *'
+on: push
+
+jobs:
+  my-job:
+    name: get config
+#     runs-on: self-hosted
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: get config
+      run: |
+        uname -a
+    - name: dep install
+      run: |
+        sudo apt-get install -y fping
+    - name: check tooling
+      run: |      
+        which ping  
+        which wget
+        which curl
+        which fping
+        nslookup google.nl
+#     - name: http check
+#       run: |
+#         fping google.nl           
+#         fping tempdata.nl
+#         fping upstreamservice.nl
+#         fping legendsandmasters.nl
+#         fping local-events.nl
+        
