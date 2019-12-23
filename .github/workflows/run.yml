@@ -23,7 +23,8 @@ jobs:
         which curl
         which fping
     - name: http check
-      run: |           
+      run: |
+        fping google.nl           
         fping tempdata.nl
         fping upstreamservice.nl
         fping legendsandmasters.nl
