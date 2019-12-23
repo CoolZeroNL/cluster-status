@@ -16,4 +16,6 @@ jobs:
         uname -a
     - name: http check
       run: |
-        fping google.nl
+        which wget
+        which curl
+        #fping google.nl
