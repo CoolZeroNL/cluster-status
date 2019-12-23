@@ -23,8 +23,7 @@ jobs:
         which wget
         which curl
         which fping
-        ip a
-        route -n
+        nslookup google.nl
         ping google.nl
     - name: http check
       run: |
