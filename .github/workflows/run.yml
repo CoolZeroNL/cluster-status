@@ -14,9 +14,11 @@ jobs:
     - name: get config
       run: |
         uname -a
-    - name: http check
+    - name: dep install
       run: |
         sudo apt-get install -y fping
+    - name: http check
+      run: |        
         which wget
         which curl
         which fping
