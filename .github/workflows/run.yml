@@ -16,6 +16,8 @@ jobs:
         uname -a
     - name: http check
       run: |
+        sudo apt-get install -y fping
         which wget
         which curl
+        which fping
         #fping google.nl
