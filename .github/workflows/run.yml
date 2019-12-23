@@ -1,4 +1,4 @@
-name: "Demonstrate GitHub Actions"
+name: "run"
 # on:
 #   schedule: 
 #   - cron: '*/5 * * * *'
