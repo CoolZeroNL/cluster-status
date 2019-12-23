@@ -24,12 +24,11 @@ jobs:
         which curl
         which fping
         nslookup google.nl
-        ping google.nl
-    - name: http check
-      run: |
-        fping google.nl           
-        fping tempdata.nl
-        fping upstreamservice.nl
-        fping legendsandmasters.nl
-        fping local-events.nl
+#     - name: http check
+#       run: |
+#         fping google.nl           
+#         fping tempdata.nl
+#         fping upstreamservice.nl
+#         fping legendsandmasters.nl
+#         fping local-events.nl
         
