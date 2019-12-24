@@ -1,11 +1,16 @@
-on: push
-name: Run Webpagetest
+name: Build and Deploy to GitHub Pages
+on:
+  push:
+    branches: [master]
 jobs:
-  webPageTestActions:
-    name: WebPageTestActions
+  build:
+    name: build-and-deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: CoolZeroNL/cluster-check@master
+        with:
+          fetch-depth: 1
+      - uses: ./.github/actions/spell-check
+      - uses: ./.github/actions/publish-gh-pages
         env:
-          URL: https://example.com
+          PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
