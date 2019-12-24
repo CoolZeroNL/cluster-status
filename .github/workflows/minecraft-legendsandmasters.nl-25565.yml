@@ -16,7 +16,7 @@ jobs:
     - name: Test URL
       run: |
         uname -a
-        chmod +x ./.github/scripts/https.sh
-        ./.github/scripts/https.sh legendsandmasters.nl 25565 3 --minecraft 
+        chmod +x ./.github/scripts/minecraft.sh
+        ./.github/scripts/minecraft.sh legendsandmasters.nl 25565
 
 
