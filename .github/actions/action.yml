@@ -1,9 +1,7 @@
-name: My Cool Action
-author: Benjamin Lannon
-description: 'Action that does some cool stuff!'
+name: https
+description: ''
 inputs:
   url:
-    description: 'Name'
     required: false
     default: ''
 runs:
