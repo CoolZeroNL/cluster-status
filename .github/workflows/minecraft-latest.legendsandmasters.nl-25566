@@ -1,0 +1,26 @@
+name: minecraft-latest.legendsandmasters.nl-25566
+# on:
+#   pull_request:
+#     branches:
+#       - 'master'
+#   push:
+#     branches:
+#       - 'master'
+
+on:
+  schedule: 
+  - cron: '*/5 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Test URL
+      run: |
+        uname -a
+        chmod +x ./.github/scripts/minecraft.sh
+        ./.github/scripts/minecraft.sh legendsandmasters.nl 25566
+
+
