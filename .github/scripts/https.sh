@@ -10,7 +10,7 @@ set -e
 url=${1:-'http://www.google.com'}
 timeout=${2:-'3'}
 #            ^in seconds
-flag=${3:-'--code'}
+flag=${3:-'--check'}
 
 #    curl options, e.g. -L to follow redirects
 arg4=${4:-'-L'}
@@ -77,9 +77,10 @@ esac
 # _______________ MAIN
 case $flag in 
      --status) echo "$code $status" ;;
-     -s)       echo "$code $status" ;;
      --code)   echo "$code"         ;;
-     -c)       echo "$code"         ;;
+     --check)  
+               echo "$code $status"
+               ;;
      *)        echo " !!  httpstatus: bad flag" && exit 1 ;;
 esac
 
