@@ -1,11 +1,11 @@
-name: Run JS Action
 on: push
+name: Run Webpagetest
 jobs:
-  run-action:
+  webPageTestActions:
+    name: WebPageTestActions
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: check https
-      uses: ./
-      with:
-        url: 'dd'
+      - uses: actions/checkout@v1
+      - uses: CoolZeroNL/cluster-check@master
+        env:
+          URL: https://example.com
