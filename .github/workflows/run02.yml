@@ -6,6 +6,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: check https
-      uses: ./.github/actions/https@master
+      uses: .github/actions/https@master
       with:
         url: 'dd'
