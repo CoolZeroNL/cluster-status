@@ -80,9 +80,11 @@ case $flag in
      --code)   echo "$code"         ;;
      --check)  
                if [[ "$code" -ne 200 ]] ; then
+                 echo "$url"
                  echo "Site status changed to $code $status" 
                  exit 1
                else
+                 echo "$url"
                  echo "$code $status"
                  exit 0
                fi
