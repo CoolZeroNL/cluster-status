@@ -1,8 +1,0 @@
-name: https
-description: ''
-inputs:
-  url:
-    required: false
-    default: ''
-runs: |
-  echo "hoi"
