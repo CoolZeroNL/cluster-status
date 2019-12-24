@@ -89,6 +89,11 @@ case $flag in
                  exit 0
                fi
                ;;
+               
+     --minecraft)
+               echo "$code"         
+               ;;
+               
      *)        echo " !!  httpstatus: bad flag" && exit 1 ;;
 esac
 
