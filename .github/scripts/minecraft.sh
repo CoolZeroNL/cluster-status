@@ -1,7 +1,7 @@
 #!/bin/bash
 
-_host="legendsandmasters.nl"
-_port="25565"
+_host=${1:-'http://www.google.com'}
+_port=${2:-'25565'}
 
 req=`curl -sq "$_host":"$_port"`
 
