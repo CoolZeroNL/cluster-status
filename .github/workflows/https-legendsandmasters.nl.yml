@@ -1,12 +1,14 @@
 name: https-legendsandmasters.nl
+# on:
+#   pull_request:
+#     branches:
+#       - 'master'
+#   push:
+#     branches:
+      - 'master'
 on:
-  pull_request:
-    branches:
-      - 'master'
-  push:
-    branches:
-      - 'master'
-
+  schedule: 
+  - cron: '*/5 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
