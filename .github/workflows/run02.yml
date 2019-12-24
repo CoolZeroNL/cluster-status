@@ -6,6 +6,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: check https
-      uses: actions/https
+      uses: actions/https@master
       with:
         url: 'dd'
