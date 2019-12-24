@@ -14,9 +14,9 @@ timeout=${3:-'3'}
 flag=${4:-'--check'}
 
 #    curl options, e.g. -L to follow redirects
-arg4=${5:-''}
-arg5=${6:-''}
-arg6=${7:-''}
+arg5=${5:-''}
+arg6=${6:-''}
+arg7=${7:-''}
 curlops="$arg5 $arg6 $arg7"
 
 
