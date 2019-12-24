@@ -1,4 +1,4 @@
-name: Rails Tests with custom Ruby version
+name: https-upstreamservice.nl
 
 on:
   pull_request:
