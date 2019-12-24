@@ -18,6 +18,6 @@ jobs:
       run: |
         uname -a
         chmod +x ./.github/scripts/https.sh
-        ./.github/scripts/https.sh upstreamservice.nl
+        ./.github/scripts/https.sh upstreamservice.nl 3 --check -L -k
 
 
