@@ -14,7 +14,7 @@ flag=${3:-'--check'}
 
 #    curl options, e.g. -L to follow redirects
 arg4=${4:-'-L'}
-arg5=${5:-''}
+arg5=${5:-'-k'}
 arg6=${6:-''}
 arg7=${7:-''}
 curlops="$arg4 $arg5 $arg6 $arg7"
