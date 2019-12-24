@@ -4,8 +4,8 @@ jobs:
   run-action:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: https
-      - uses: ./.github/actions/https
-        with:
-          url: 'upstreamservice.nl'
+    - uses: actions/checkout@v1
+    - name: check https
+      uses: actions/https@v1
+      with:
+        url: 'dd'
