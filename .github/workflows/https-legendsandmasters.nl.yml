@@ -5,10 +5,12 @@ name: https-legendsandmasters.nl
 #       - 'master'
 #   push:
 #     branches:
-      - 'master'
+#       - 'master'
+
 on:
   schedule: 
   - cron: '*/5 * * * *'
+
 jobs:
   build:
     runs-on: ubuntu-latest
