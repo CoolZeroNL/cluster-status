@@ -1,4 +1,4 @@
-name: ts-legendsandmasters.nl
+name: ts-ts.legendsandmasters.nl
 on:
   pull_request:
     branches:
@@ -17,6 +17,6 @@ jobs:
       run: |
         uname -a
         chmod +x ./.github/scripts/ts.sh
-        ./.github/scripts/ts.sh ts.legendsandmasters.nl
+        ./.github/scripts/ts.sh ts.aalegendsandmasters.nl
 
 
