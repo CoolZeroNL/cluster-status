@@ -1,0 +1,23 @@
+name: https-tempdata.nl
+
+on:
+  pull_request:
+    branches:
+      - 'master'
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Build App
+      env:
+        PGHOST: localhost
+      run: |
+        uname -a
+        chmod +x ./.github/scripts/https.sh
+        ./.github/scripts/https.sh tempdata.nl
