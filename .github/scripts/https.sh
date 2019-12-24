@@ -8,21 +8,21 @@ set -e
 # _______________     ::  BEGIN  Script ::::::::::::::::::::::::::::::::::::::::
 
 url=${1:-'http://www.google.com'}
-port=${2:-'443'}
-timeout=${3:-'3'}
+# port=${2:-'443'}
+timeout=${2:-'3'}
 #            ^in seconds
-flag=${4:-'--check'}
+flag=${3:-'--check'}
 
 #    curl options, e.g. -L to follow redirects
-arg5=${5:-''}
-arg6=${6:-''}
-arg7=${7:-''}
-curlops="$arg5 $arg6 $arg7"
+arg5=${4:-''}
+arg6=${5:-''}
+arg7=${6:-''}
+curlops="$arg4 $arg5 $arg6"
 
 
 #      __________ get the CODE which is numeric:
 code=`echo $(curl --write-out %{http_code} --silent -S --connect-timeout $timeout \
-                  --no-keepalive $curlops --output /dev/null  $url:$port)`
+                  --no-keepalive $curlops --output /dev/null  $url)`
                   #  though curl is --silent, -S will show its errors.
 
 
