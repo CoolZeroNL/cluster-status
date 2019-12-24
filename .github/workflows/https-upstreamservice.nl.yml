@@ -14,9 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Build App
-      env:
-        PGHOST: localhost
+    - name: Test URL
       run: |
         uname -a
         chmod +x ./.github/scripts/https.sh
