@@ -79,7 +79,13 @@ case $flag in
      --status) echo "$code $status" ;;
      --code)   echo "$code"         ;;
      --check)  
-               echo "$code $status"
+               if [[ "$code" -ne 200 ]] ; then
+                 echo "Site status changed to $code $status" 
+                 exit 1
+               else
+                 echo "$code $status"
+                 exit 0
+               fi
                ;;
      *)        echo " !!  httpstatus: bad flag" && exit 1 ;;
 esac
