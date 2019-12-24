@@ -5,7 +5,7 @@ name: https-legendsandmasters.nl
 #       - 'master'
 #   push:
 #     branches:
-#       - 'master'
+#       - 'master' 
 
 on:
   schedule: 
