@@ -17,6 +17,6 @@ jobs:
       run: |
         uname -a
         chmod +x ./.github/scripts/https.sh
-        ./.github/scripts/https.sh https://legendsandmasters.nl 3 --check -L -k
+        ./.github/scripts/https.sh legendsandmasters.nl 3 --check -L -k
 
 
