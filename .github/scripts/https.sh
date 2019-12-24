@@ -1,41 +1,4 @@
 #!/usr/bin/env bash
-#              bash 4.1.5(1)     Linux Ubuntu 10.04              Date : 2011-08-25
-#
-# _______________|  httpstatus : get HTTP status code
-#
-#           Usage:  httpstatus URL [timeout] [--code or --status] [see 4.]
-#                                                       ^message with code (default) 
-#                                             ^code (numeric only)
-#                                  ^in secs (default: 3)
-#                              ^URL without "http://" prefix works fine.
-#
-#                              4. curl options: e.g. use -L to follow redirects.
-#
-#    Dependencies:  curl
-#
-#         Example:  $ httpstatus bit.ly
-#                   301 Redirection: Moved Permanently
-
-#  CHANGE LOG
-#  2011-08-25  Publicly available at https://gist.github.com/1171304 
-#              Add timeout and status info. Restrict query to one URL.
-#              Add --no-keepalive to curl arguments.
-#              Did not adopt Andrew Gilmartin's suggestion, --head, where curl 
-#              retreives only the HTTP-header, not the entire document 
-#              (would seem faster, but does not always work; e.g. bit.ly).
-#
-#  2011-08-24  First version based on one-liner from Hilary Mason's script:
-#  http://www.hilarymason.com/blog/bash-get-http-response-codes-for-a-list-of-urls/
-#
-#       #  "I had a file with a list of URLs, and I wanted the 
-#       #   HTTP response codes for each of them." 2011-08-24 blog post
-#
-#       while read line  
-#       do  
-#            echo $(curl --write-out %{http_code} --silent --output /dev/null $line)  
-#       done <$1  
-
-
 #           _____ Prelims
 set -u
 #   ^ unbound (i.e. unassigned) variables shall be errors.
@@ -47,10 +10,10 @@ set -e
 url=${1:-'http://www.google.com'}
 timeout=${2:-'3'}
 #            ^in seconds
-flag=${3:-'--status'}
+flag=${3:-'--code'}
 
 #    curl options, e.g. -L to follow redirects
-arg4=${4:-''}
+arg4=${4:-'-L'}
 arg5=${5:-''}
 arg6=${6:-''}
 arg7=${7:-''}
@@ -119,6 +82,9 @@ case $flag in
      -c)       echo "$code"         ;;
      *)        echo " !!  httpstatus: bad flag" && exit 1 ;;
 esac
+
+
+
 
 
 exit 0
