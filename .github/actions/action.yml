@@ -1,8 +1,9 @@
-name: https
-description: Run simple scripts using the GitHub client
+name: My Cool Action
+author: Benjamin Lannon
+description: 'Action that does some cool stuff!'
 inputs:
   url:
-    required: true
-  github-token:
-    description: The GitHub token used to create an authenticated client
-run: | 
+    description: 'Name'
+    required: false
+    default: ''
+runs:
