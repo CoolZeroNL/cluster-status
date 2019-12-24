@@ -4,5 +4,5 @@ inputs:
   url:
     required: false
     default: ''
-   run: |
-     echo "hoi"
+runs: |
+  echo "hoi"
