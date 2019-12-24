@@ -27,6 +27,4 @@ jobs:
     - name: Check container
       uses: actions/func-check-https.yml
       with:
-        first_name: Mona
-        middle_name: The
-        last_name: Octocat 
+        url: Mona
