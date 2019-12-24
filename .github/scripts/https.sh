@@ -8,7 +8,6 @@ set -e
 # _______________     ::  BEGIN  Script ::::::::::::::::::::::::::::::::::::::::
 
 url=${1:-'http://www.google.com'}
-# port=${2:-'443'}
 timeout=${2:-'3'}
 #            ^in seconds
 flag=${3:-'--check'}
@@ -17,7 +16,8 @@ flag=${3:-'--check'}
 arg4=${4:-'-L'}
 arg5=${5:-'-k'}
 arg6=${6:-''}
-curlops="$arg4 $arg5 $arg6"
+arg7=${7:-''}
+curlops="$arg4 $arg5 $arg6 $arg7"
 
 
 #      __________ get the CODE which is numeric:
@@ -89,11 +89,6 @@ case $flag in
                  exit 0
                fi
                ;;
-               
-     --minecraft)
-               echo "$code"         
-               ;;
-               
      *)        echo " !!  httpstatus: bad flag" && exit 1 ;;
 esac
 
