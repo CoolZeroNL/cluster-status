@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: my-cool-action
+      - name: https
         uses: ./
         with:
-          name: 'Ben'
+          url: 'upstreamservice.nl'
