@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: https
-        uses: ./
+      - uses: ./.github/actions/https
         with:
           url: 'upstreamservice.nl'
