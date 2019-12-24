@@ -11,7 +11,9 @@
 [![Actions Status](https://github.com/CoolZeroNL/cluster-status/workflows/https-legendsandmasters.nl//badge.svg)](https://github.com/CoolZeroNL/cluster-status/actions)
 
 ## TeamSpeak
+[![Actions Status](https://github.com/CoolZeroNL/cluster-status/workflows/ts-ts.legendsandmasters.nl//badge.svg)](https://github.com/CoolZeroNL/cluster-status/actions)
 
 ## Minecraft
+[![Actions Status](https://github.com/CoolZeroNL/cluster-status/workflows/minecraft-legendsandmasters.nl//badge.svg)](https://github.com/CoolZeroNL/cluster-status/actions)
 
 ## VPN
