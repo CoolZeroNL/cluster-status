@@ -72,7 +72,15 @@
                 cd $_folder
                 sed -i 's/FORGEVER=.*/FORGEVER='$file_FORGEVER'/g' settings.cfg
                 sed -i 's/MCVER=.*/MCVER='$file_MCVER'/g' settings.cfg
+                which git
                 # git update
+#                 git config --global user.name MinecraftAutoUpdater
+#                 git config --global user.email mincecraft@legendsandmasters.nl
+#                 git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+#                 git pull github ${GITHUB_REF} --ff-only
+#                 git add .
+#                 git commit -m "AutoUpdate"
+#                 git push github HEAD:${GITHUB_REF}
               fi
               
               exit 2
