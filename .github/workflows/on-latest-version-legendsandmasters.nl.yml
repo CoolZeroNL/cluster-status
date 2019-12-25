@@ -13,3 +13,5 @@ jobs:
     - name: get config
       run: |
         git clone https://github.com/CoolZeroNL/minecraft-01-pub-config.git
+        chmod +x ./.github/scripts/minecraft-version-check.sh
+        ./.github/scripts/minecraft-version-check.sh minecraft-01-pub-config
