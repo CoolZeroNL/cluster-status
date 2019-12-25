@@ -65,25 +65,30 @@
               echo "file forgever is heigher or EQ"
               #echo $file_FORGEVER "< - >" $FORGEVER
               echo "$FORGEVER < - > $file_FORGEVER"
-              
-              if $_autoupdate; then
-                echo "autoupdate"
-                ls -la
-                cd $_folder
-                sed -i 's/FORGEVER=.*/FORGEVER='$file_FORGEVER'/g' settings.cfg
-                sed -i 's/MCVER=.*/MCVER='$file_MCVER'/g' settings.cfg
-                ls -la
-                # git update
-                git config --global user.name MinecraftAutoUpdater
-                git config --global user.email mincecraft@legendsandmasters.nl
-                git remote add github "https://CoolZeroNL:$GITHUB_TOKEN@github.com/CoolZeroNL/$_folder.git"
-                git pull github ${GITHUB_REF} --ff-only
-                git add .
-                git commit -m "AutoUpdate"
-                git push github HEAD:${GITHUB_REF}
-              fi
-              
-              exit 2
+
+                      if $_autoupdate; then
+                        echo "autoupdate"
+
+                        cd $_folder
+                        sed -i 's/FORGEVER=.*/FORGEVER='$file_FORGEVER'/g' settings.cfg
+                        sed -i 's/MCVER=.*/MCVER='$file_MCVER'/g' settings.cfg
+
+                        # git update
+                        git config --global user.name MinecraftAutoUpdater
+                        git config --global user.email mincecraft@legendsandmasters.nl
+                        git remote add github "https://CoolZeroNL:$GITHUB_TOKEN@github.com/CoolZeroNL/$_folder.git"
+                        git pull github ${GITHUB_REF} --ff-only
+                        git add .
+                        git commit -m "AutoUpdate"
+                        if [[ "$(git push github HEAD:${GITHUB_REF})" == *"Done"* ]]
+                        then
+                          echo "git push was successful!"
+                        else
+                          exit 2
+                        fi
+                      else
+                        exit 2
+                      fi
 
               fi
 
