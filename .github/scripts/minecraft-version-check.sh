@@ -76,7 +76,7 @@
                 # git update
                 git config --global user.name MinecraftAutoUpdater
                 git config --global user.email mincecraft@legendsandmasters.nl
-                git remote add github "https://CoolZeroNL:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+                git remote add github "https://CoolZeroNL:$GITHUB_TOKEN@github.com/$_folder.git"
                 git pull github ${GITHUB_REF} --ff-only
                 git add .
                 git commit -m "AutoUpdate"
