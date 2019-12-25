@@ -68,11 +68,15 @@
               
               if $_autoupdate; then
                 echo "autoupdate"
+                ls -la
+                cd $_folder
+                sed -i 's/FORGEVER=.*/FORGEVER='$file_FORGEVER'/g' settings.cfg
+                sed -i 's/MCVER=.*/MCVER='$file_MCVER'/g' settings.cfg
+                # git update
               fi
               
               exit 2
-              # sed -i 's/FORGEVER=.*/FORGEVER='$file_FORGEVER'/g' settings.cfg
-              # sed -i 's/MCVER=.*/MCVER='$file_MCVER'/g' settings.cfg
+
               fi
 
             fi
