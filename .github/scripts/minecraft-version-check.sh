@@ -1,7 +1,7 @@
 #!/bin/bash
 
-        folder="$1"
-        autoupdate="$2"
+        _folder=${1:-''}
+        _autoupdate=${2:-'false'}
 
         uname -a
         #ls -la 
@@ -14,8 +14,8 @@
         }
 
         # read current MCVER adn FORGEVER
-        MCVER=`cat $folder/settings.cfg | grep MCVER | awk -F'=' '{print $2}'`
-        FORGEVER=`cat $folder/settings.cfg | grep FORGEVER | awk -F'=' '{print $2}'`
+        MCVER=`cat $_folder/settings.cfg | grep MCVER | awk -F'=' '{print $2}'`
+        FORGEVER=`cat $_folder/settings.cfg | grep FORGEVER | awk -F'=' '{print $2}'`
 
         # echo "MCVER "$MCVER
         # echo "FORGEVER "$FORGEVER
@@ -66,7 +66,7 @@
               #echo $file_FORGEVER "< - >" $FORGEVER
               echo $FORGEVER "< - >" $file_FORGEVER 
               
-              if $autoupdate; then
+              if $_autoupdate; then
                 echo "autoupdate"
               fi
               
