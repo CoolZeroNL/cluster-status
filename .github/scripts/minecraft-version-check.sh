@@ -2,7 +2,7 @@
 
         _folder=${1:-''}
         _autoupdate=${2:-'false'}
-
+ 
         uname -a
         #ls -la 
         verlte() {
