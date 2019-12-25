@@ -15,3 +15,5 @@ jobs:
         git clone https://github.com/CoolZeroNL/minecraft-01-latest-pub-config.git
         chmod +x ./.github/scripts/minecraft-version-check.sh
         ./.github/scripts/minecraft-version-check.sh minecraft-01-latest-pub-config true
+      env: 
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}  
