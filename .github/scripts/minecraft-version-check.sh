@@ -55,6 +55,7 @@
         #echo $file_FORGEVER
         #echo $file_MCVER '< - >' $MCVER 
         echo "$MCVER < - > $file_MCVER" 
+        echo "$FORGEVER < - > $file_FORGEVER"
 
                 if verlte $MCVER $file_MCVER || verlte $file_MCVER $MCVER; then
                     # echo "MCFILE eq or file is higher"
@@ -62,9 +63,10 @@
                     if verlte $FORGEVER $file_FORGEVER; then
 
                               if verlt $FORGEVER $file_FORGEVER; then
-                              echo "file forgever is heigher or EQ"
+#                               echo "file forgever is heigher or EQ"
+                                echo "update availible"
                               #echo $file_FORGEVER "< - >" $FORGEVER
-                              echo "$FORGEVER < - > $file_FORGEVER"
+#                               echo "$FORGEVER < - > $file_FORGEVER"
 
                                       if $_autoupdate; then
                                         echo "autoupdate"
@@ -94,9 +96,6 @@
 
                     fi
                 fi
-                
-        else
-         echo "$FORGEVER < - > $file_FORGEVER"
         fi
         
         
