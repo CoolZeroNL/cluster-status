@@ -21,6 +21,6 @@ jobs:
       run: |
         uname -a
         chmod +x ./.github/scripts/minecraft.sh
-        ./.github/scripts/minecraft.sh legendsandmasters.nl 25566
+        ./.github/scripts/minecraft.sh latest.legendsandmasters.nl 25566
 
 
