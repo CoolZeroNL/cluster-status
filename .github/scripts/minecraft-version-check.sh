@@ -52,7 +52,8 @@
 
         #echo $file_MCVER
         #echo $file_FORGEVER
-        echo $file_MCVER '< - >' $MCVER 
+        #echo $file_MCVER '< - >' $MCVER 
+        echo $MCVER '< - >' $file_MCVER 
 
         if verlte $MCVER $file_MCVER || verlte $file_MCVER $MCVER; then
             # echo "MCFILE eq or file is higher"
@@ -61,7 +62,8 @@
 
               if verlt $FORGEVER $file_FORGEVER; then
               echo "file forgever is heigher or EQ"
-              echo $file_FORGEVER "< - >" $FORGEVER
+              #echo $file_FORGEVER "< - >" $FORGEVER
+              echo $FORGEVER "< - >" $file_FORGEVER 
               exit 2
               # sed -i 's/FORGEVER=.*/FORGEVER='$file_FORGEVER'/g' settings.cfg
               # sed -i 's/MCVER=.*/MCVER='$file_MCVER'/g' settings.cfg
