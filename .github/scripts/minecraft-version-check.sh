@@ -82,7 +82,7 @@
                                         git pull github ${GITHUB_REF} --ff-only
                                         git add .
                                         git commit -m "AutoUpdate"
-                                        if [[ "$(git push github HEAD:${GITHUB_REF})" == *"Done"* ]]
+                                        if [[ "$(git push github HEAD:${GITHUB_REF} --porcelain)" == *"Done"* ]]
                                         then
                                           echo "git push was successful!"
                                         else
