@@ -12,6 +12,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: get config
       run: |
-        git clone https://github.com/CoolZeroNL/minecraft-01-pub-config.git
+        git clone https://github.com/CoolZeroNL/minecraft-00-stable-pub-config.git
         chmod +x ./.github/scripts/minecraft-version-check.sh
-        ./.github/scripts/minecraft-version-check.sh minecraft-01-pub-config
+        ./.github/scripts/minecraft-version-check.sh minecraft-00-stable-pub-config
