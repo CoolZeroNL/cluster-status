@@ -1,4 +1,4 @@
-name: "on-latest-version-legendsandmasters.nl"
+name: "on-latest-version-stable.legendsandmasters.nl"
 on:
   schedule: 
   - cron: '*/5 * * * *'
