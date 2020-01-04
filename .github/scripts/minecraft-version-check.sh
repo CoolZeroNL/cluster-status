@@ -77,6 +77,9 @@
                                         cd $_folder
                                         sed -i 's/FORGEVER=.*/FORGEVER='$file_FORGEVER'/g' settings.cfg
                                         sed -i 's/MCVER=.*/MCVER='$file_MCVER'/g' settings.cfg
+                                        
+                                        sed -i 's/FORGEVER=.*/FORGEVER='$file_FORGEVER'/g' readme.md
+                                        sed -i 's/MCVER=.*/MCVER='$file_MCVER'/g' readme.md
 
                                         # git update
                                         git config --global user.name MinecraftAutoUpdater
