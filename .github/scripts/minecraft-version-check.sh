@@ -81,9 +81,6 @@
                                         sed -i 's/FORGEVER=.*/FORGEVER='$file_FORGEVER'/g' readme.md
                                         sed -i 's/MCVER=.*/MCVER='$file_MCVER'/g' readme.md
 
-                                        chmod +x ./.github/scripts/git-log.sh
-                                        ./.github/scripts/git-log.sh
-
                                         # git update
                                         git config --global user.name MinecraftAutoUpdater
                                         git config --global user.email mincecraft@legendsandmasters.nl
@@ -94,6 +91,8 @@
                                         if [[ "$(git push github HEAD:${GITHUB_REF} --porcelain)" == *"Done"* ]]
                                         then
                                           echo "git push was successful!"
+                                          chmod +x ./.github/scripts/git-log.sh
+                                          ./.github/scripts/git-log.sh
                                         else
                                           exit 2
                                         fi
