@@ -40,6 +40,7 @@ done
 cat $tmpfile | sort > $file
 rm $tmpfile
 
+chmod +x ./.github/scripts/gnuplot.pg
 ./.github/scripts/gnuplot.pg
 
 rm $file
