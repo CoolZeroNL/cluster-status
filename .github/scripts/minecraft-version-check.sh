@@ -91,8 +91,8 @@
                                         if [[ "$(git push github HEAD:${GITHUB_REF} --porcelain)" == *"Done"* ]]
                                         then
                                           echo "git push was successful!"
-                                          chmod +x ../cluster-status/.github/scripts/git-log.sh
-                                          ../cluster-status/.github/scripts/git-log.sh
+                                          chmod +x ../.github/scripts/git-log.sh
+                                          ../.github/scripts/git-log.sh
                                           ls -la 
                                           ls -la ../
                                         else
