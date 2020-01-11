@@ -81,6 +81,9 @@
                                         sed -i 's/FORGEVER=.*/FORGEVER='$file_FORGEVER'/g' readme.md
                                         sed -i 's/MCVER=.*/MCVER='$file_MCVER'/g' readme.md
 
+                                        chmod +x ./.github/scripts/git-log.sh
+                                        ./.github/scripts/git-log.sh
+
                                         # git update
                                         git config --global user.name MinecraftAutoUpdater
                                         git config --global user.email mincecraft@legendsandmasters.nl
