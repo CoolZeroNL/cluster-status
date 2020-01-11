@@ -82,7 +82,7 @@ set grid
 
 set style data linespoints
 
-# plot "test.dat" using 1:5 title "slot 1", \
+# plot "/tmp/test.dat" using 1:5 title "slot 1", \
 
 # Plot the actual data
 # u 1:2 = using column 1 for X axis and column 2 for Y axis
@@ -90,7 +90,7 @@ set style data linespoints
 # ls 1 = use our defined linestyle 1
 # t "Test 1" = title "Test 1" will go in the legend
 # The rest of the lines plot columns 3, 5 and 7
-plot "test.dat" u 1:5 w lp ls 1 t "slot 1", \
+plot "/tmp/test.dat" u 1:5 w lp ls 1 t "slot 1", \
 
 # This is important because it closes our output file.
 set output
