@@ -27,14 +27,14 @@ echo ""
 for i in "${pararray[@]}"
 do
         # Jan 5 00:02:49 2020 25
-        echo -e "$i" | grep Date
-        echo -e "$i" | grep +FORGEVER
+        #echo -e "$i" | grep Date
+        #echo -e "$i" | grep +FORGEVER
 
         VER=`echo -e "$i" | grep +FORGEVER | awk -F'=' '{print $2}' | awk -F'.' '{print $3}'`
         DAT=`echo -e "$i" | grep Date | awk -F" " '{print $3 " " $4 " " $5 " " $6}'`
 
         echo $DAT $VER >> $tmpfile
-        echo "------------------------"
+        #echo "------------------------"
 done
 
 # cat $tmpfile | sort > $file
