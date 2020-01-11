@@ -91,9 +91,11 @@
                                         if [[ "$(git push github HEAD:${GITHUB_REF} --porcelain)" == *"Done"* ]]
                                         then
                                           echo "git push was successful!"
+                                          sleep 60 # so that the workflow of the deploy wont see the next commit msg.
                                           
                                           chmod +x ../.github/scripts/git-log.sh
                                           ../.github/scripts/git-log.sh
+                                          
                                           # git update
                                           git config --global user.name GNUPLOT
                                           git config --global user.email gnuplot@legendsandmasters.nl
