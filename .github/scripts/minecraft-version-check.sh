@@ -80,6 +80,11 @@
                                         
                                         sed -i 's/FORGEVER=.*/FORGEVER='$file_FORGEVER'/g' readme.md
                                         sed -i 's/MCVER=.*/MCVER='$file_MCVER'/g' readme.md
+                                        
+                                        chmod +x ../.github/scripts/git-log.sh
+                                        ../.github/scripts/git-log.sh
+
+                                        sleep 10
 
                                         # git update
                                         git config --global user.name MinecraftAutoUpdater
@@ -90,25 +95,7 @@
                                         git commit -m "AutoUpdate"
                                         if [[ "$(git push github HEAD:${GITHUB_REF} --porcelain)" == *"Done"* ]]
                                         then
-                                          echo "git push was successful!"
-                                          sleep 60 # so that the workflow of the deploy wont see the next commit msg.
-                                          
-                                          chmod +x ../.github/scripts/git-log.sh
-                                          ../.github/scripts/git-log.sh
-                                          
-                                          # git update
-                                          git config --global user.name GNUPLOT
-                                          git config --global user.email gnuplot@legendsandmasters.nl
-                                          git remote add github "https://CoolZeroNL:$GITHUB_TOKEN@github.com/CoolZeroNL/$_folder.git"
-                                          git pull github ${GITHUB_REF} --ff-only
-                                          git add .
-                                          git commit -m "GNUPLOT skip-ci"
-                                          if [[ "$(git push github HEAD:${GITHUB_REF} --porcelain)" == *"Done"* ]]
-                                          then
-                                            echo "git push was successful!"
-                                          else
-                                            exit 2
-                                          fi
+                                          echo "git push was successful!"                                          
                                         else
                                           exit 2
                                         fi
