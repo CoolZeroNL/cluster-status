@@ -41,9 +41,8 @@ cat $tmpfile | sort > $file
 rm $tmpfile
 
 ls -la
-chmod +x ./gnuplot.pg
-./gnuplot.pg
-
-cat $file
+chmod +x ../.github/scripts/gnuplot.pg
+../.github/scripts/gnuplot.pg
 
 rm $file
+rm list
