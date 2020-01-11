@@ -102,7 +102,7 @@
                                           git remote add github "https://CoolZeroNL:$GITHUB_TOKEN@github.com/CoolZeroNL/$_folder.git"
                                           git pull github ${GITHUB_REF} --ff-only
                                           git add .
-                                          git commit -m "skip-ci"
+                                          git commit -m "GNUPLOT skip-ci"
                                           if [[ "$(git push github HEAD:${GITHUB_REF} --porcelain)" == *"Done"* ]]
                                           then
                                             echo "git push was successful!"
