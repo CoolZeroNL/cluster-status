@@ -93,6 +93,7 @@
                                           echo "git push was successful!"
                                           chmod +x ./.github/scripts/git-log.sh
                                           ./.github/scripts/git-log.sh
+                                          ls -la 
                                         else
                                           exit 2
                                         fi
