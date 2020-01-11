@@ -37,12 +37,13 @@ do
         echo "------------------------"
 done
 
-cat $tmpfile | sort > $file
-# rm $tmpfile
+# cat $tmpfile | sort > $file
+sort -k 2,2n -k 3 $tmpfile > $file
+rm $tmpfile
 
 ls -la
 chmod +x ../.github/scripts/gnuplot.pg
 ../.github/scripts/gnuplot.pg
 
-# rm $file
-# rm list
+rm $file
+rm list
