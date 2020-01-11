@@ -38,7 +38,7 @@ do
 done
 
 # cat $tmpfile | sort > $file
-sort -k 2,2n -k 3 $tmpfile > $file
+sort -k 4 -k 2,2n $tmpfile > $file
 rm $tmpfile
 
 chmod +x ../.github/scripts/gnuplot.pg
