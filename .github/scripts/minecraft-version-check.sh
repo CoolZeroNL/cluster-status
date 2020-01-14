@@ -84,8 +84,8 @@
                                         # release notes : to : readme.md ########################
                                         file='readme.md'
 
-                                        num_changes=`grep -n '# Changes' tmp | awk -F':' '{print $1}'`
-                                        num_history=`grep -n '# History' tmp | awk -F':' '{print $1}'`
+                                        num_changes=`grep -n '# Changes' $file | awk -F':' '{print $1}'`
+                                        num_history=`grep -n '# History' $file | awk -F':' '{print $1}'`
 
                                         ((num_changes = num_changes + 1))
                                         ((num_history = num_history - 1))
