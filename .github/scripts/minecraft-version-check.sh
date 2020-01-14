@@ -81,6 +81,26 @@
                                         sed -i 's/FORGEVER=.*/FORGEVER='$file_FORGEVER'/g' readme.md
                                         sed -i 's/MCVER=.*/MCVER='$file_MCVER'/g' readme.md
                                         
+                                        # release notes : to : readme.md ########################
+                                        file='readme.md'
+
+                                        num_changes=`grep -n '# Changes' tmp | awk -F':' '{print $1}'`
+                                        num_history=`grep -n '# History' tmp | awk -F':' '{print $1}'`
+
+                                        ((num_changes = num_changes + 1))
+                                        ((num_history = num_history - 1))
+
+                                        sed -i $num_changes','$num_history'd' $file
+
+                                        data=`curl -sq http://files.minecraftforge.net/maven/net/minecraftforge/forge/$file_MCVER-$file_FORGEVER/forge-$file_MCVER-$file_FORGEVER-changelog.txt | sed '/=========/q'`
+
+                                        sed '/^# Changes/r'<(
+                                            echo "$data"
+                                        ) -i -- $file
+
+                                        sed -i '/=========/d' $file
+                                        ################################
+                                        
                                         chmod +x ../.github/scripts/git-log.sh
                                         ../.github/scripts/git-log.sh
 
