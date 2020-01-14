@@ -101,15 +101,14 @@
                                         sed -i '/=========/d' $file
                                         
                                         ## add space to end of line
-                                        num_changes=`grep -n '# Changes' tmp | awk -F':' '{print $1}'`
-                                        num_history=`grep -n '# History' tmp | awk -F':' '{print $1}'`
+                                        num_changes=`grep -n '# Changes' $file | awk -F':' '{print $1}'`
+                                        num_history=`grep -n '# History' $file | awk -F':' '{print $1}'`
 
                                         ((num_changes = num_changes + 1))
                                         ((num_history = num_history - 1))
 
                                         for (( c=$num_changes; c<=$num_history; c++ ))
                                         do
-                                                echo -n "$c "
                                                 sed -i -e $c's/$/  /' $file
                                         done
                                         ################################
