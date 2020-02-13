@@ -31,12 +31,12 @@
         # MCVER is bigger then cur_site_version	
         # echo "true"
 
-        latest_MCVER_on_site=`curl -qs https://files.minecraftforge.net/maven/net/minecraftforge/forge/ | grep -m 1 '/maven/net/minecraftforge/forge/index_' | grep -oP -m 1 '(?<=.html">).*?(?=</a>)' | grep ''`
+        latest_MCVER_on_site=`curl -qs https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.15.html | grep -m 1 '/maven/net/minecraftforge/forge/index_' | grep -oP -m 1 '(?<=.html">).*?(?=</a>)' | grep ''`
         # latest_MCVER_on_site=`curl -qs https://files.minecraftforge.net/maven/net/minecraftforge/forge/ | grep '/maven/net/minecraftforge/forge/index_' | head -n1 `
         # echo "LATEST "$latest_MCVER_on_site
 
         # lates MCVER URL page.
-        latest_MCVER_url=`curl -qs https://files.minecraftforge.net/maven/net/minecraftforge/forge/ | grep -m 1 '/maven/net/minecraftforge/forge/index_' | sed -n 's/.*href="\([^"]*\).*/\1/p'`
+        latest_MCVER_url=`curl -qs https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.15.html | grep -m 1 '/maven/net/minecraftforge/forge/index_' | sed -n 's/.*href="\([^"]*\).*/\1/p'`
         # echo "URL "$latest_MCVER_url
 
         # get url lastest on page
